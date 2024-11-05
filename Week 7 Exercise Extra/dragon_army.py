@@ -25,7 +25,6 @@ for i in range(number_of_dragons):
 
 for dragon_type in dragon_db:
     type_average_stats = [0, 0, 0]
-    print(dragon_db[dragon_type].items())
     sorted_dragons_list = dict(sorted(dragon_db[dragon_type].items()))
 
     for dragon in dragon_db[dragon_type]:
@@ -33,7 +32,6 @@ for dragon_type in dragon_db:
         type_average_stats[1] += dragon_db[dragon_type][dragon][1]
         type_average_stats[2] += dragon_db[dragon_type][dragon][2]
 
-    print(sorted_dragons_list)
     type_average_stats = list(map(lambda x: x / len(dragon_db[dragon_type]), type_average_stats))
     print(f"{dragon_type}::({type_average_stats[0]:.2f}/{type_average_stats[1]:.2f}/{type_average_stats[2]:.2f})")
 
